@@ -3,7 +3,7 @@
 		<cart v-if="cartNull"></cart>
 		<div v-if="isAndroid">
 			<div class="purchase-list">
-				<div class="purchase-info" v-for="(item,index) in carList">
+				<div class="purchase-info" v-for="(item,index) in carList" :key="index">
 					<div>
 						<label><input type="checkbox" v-model="item.isChecked"  @click="selected(item)"><span></span></label>
 					</div>
@@ -39,7 +39,7 @@
 		</div>
 		<div v-if="isiOS">
 			<div class="purchase-list">
-				<div class="purchase-info" v-for="(item,index) in carList">
+				<div class="purchase-info" v-for="(item,index) in carList" :key="index">
 					<div @click="selected(item)">
 						<label><input type="checkbox" v-model="item.isChecked"><span></span></label>
 					</div>

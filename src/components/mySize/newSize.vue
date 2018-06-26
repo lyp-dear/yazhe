@@ -6,10 +6,10 @@
 		<!--<mt-field label="身高(CM)" placeholder="例如170" type="number" v-model="height"></mt-field>
 		<mt-field label="体重(KG)" placeholder="例如170" type="number" v-model="weight"></mt-field>-->
 		<div class="size-list">
-			<div class="size-list-info" v-for="(item,listIndex) in sizeList">
+			<div class="size-list-info" v-for="(item,listIndex) in sizeList" :key="listIndex">
 				<div class="title">{{item.title}}</div>
 				<div class="icon">
-					<div :class="{'active':index == indexArray[listIndex].index}" v-for="(info,index) in item.sizeConfigValueList" @click="clickSize(info,index,listIndex,item)">
+					<div :class="{'active':index == indexArray[listIndex].index}" v-for="(info,index) in item.sizeConfigValueList" @click="clickSize(info,index,listIndex,item)" :key="index">
 						<div class="icon-box">
 							<img v-lazy="info.image" alt="" />
 						</div>
@@ -243,8 +243,6 @@
 	img {
 		height: 100%;
 	}
-	
-	#new-size {}
 	
 	.default-address {
 		text-align: center;

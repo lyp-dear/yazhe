@@ -13,14 +13,14 @@
 
 				<scroll class="order-content" :data="orderList">
 					<div class="order-list-info">
-						<div class="order-info" v-for="(item,index) in orderList">
+						<div class="order-info" v-for="(item,index) in orderList" :key="index">
 							<div class="order-number">
 								<div>订单编号：{{item.order_number}}</div>
 								<div v-if="item.is_pay == 1">交易成功</div>
 								<div v-if="item.is_pay == 0">待支付</div>
 							</div>
 							<div class="commodity-info">
-								<div class="icon" v-for="info in item.goodsList"><img  width="57" height="64" v-lazy="info.picture_url" alt="" /></div>
+								<div class="icon" v-for="(info,infoIndex) in item.goodsList" :key="infoIndex"><img  width="57" height="64" v-lazy="info.picture_url" alt="" /></div>
 								<!--<div class="name">
 								<p>GENANX</p>
 								<p>冬季男士插色休闲长袖夹克外套</p>

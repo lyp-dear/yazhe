@@ -1,9 +1,6 @@
 <template>
 	<div id="classifyList">
-		<!--<tab v-model="selected" fixBottom>
-			<!-- selected是你自己定义的一个在data中用于存放当前tab-item的索引值的变量 --
-			<tab-item v-for="(item, index) in classfyList" :key="index" @click.native="nav(item)"> {{item.title}} </tab-item>
-		</tab>-->
+
 		<mt-navbar v-model="selected" @click.native="changeType">
 			<mt-tab-item id="1">全定制</mt-tab-item>
 			<mt-tab-item id="0">成衣&半定制</mt-tab-item>
@@ -23,7 +20,7 @@
 			<div class="foods-wrapper">
 				<scroll ref="scroll" class="wrapper" :data="list" :pullup="true" @scrollToEnd="loadJacketBottom">
 					<div class="content">
-						<div class="tab-container" v-for="(item,index) in classfyList" v-show="index == selected">
+						<div class="tab-container" v-for="(item,index) in classfyList" :key="index" v-show="index == selected">
 							<list :data="list" @nextRouter="goDetail"></list>
 							<div class="no-data" v-if="isData">别再拉了，我是有底线的</div>
 						</div>
@@ -165,7 +162,6 @@
 		top: 0;
 	}
 	
-	.order-content {}
 	
 	.goods {
 		display: flex;
