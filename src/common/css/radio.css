@@ -1,0 +1,49 @@
+	label {
+		font-size: 12px;
+		cursor: pointer;
+	}
+	
+	label > span {
+		display: inline-block;
+		background-color: #fff;
+		border-radius: 50%;
+		border: 1px solid #4c3622;
+		position: relative;
+		width: 17px;
+		height: 17px;
+		vertical-align: middle;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	
+	label > span:after {
+		border: 2px solid transparent;
+		border-left: 0;
+		border-top: 0;
+		content: " ";
+		top: 0px;
+		left: 4px;
+		position: absolute;
+		width: 4px;
+		height: 8px;
+		-webkit-transform: rotate(45deg) scale(0);
+		transform: rotate(45deg) scale(0);
+		-webkit-transition: -webkit-transform .2s;
+		transition: -webkit-transform .2s;
+		transition: transform .2s;
+		transition: transform .2s, -webkit-transform .2s;
+	}
+	
+	input[type="checkbox"] {
+		display: none;
+	}
+	
+	input[type="checkbox"]:checked+span {
+		background-color: #4c3622;
+	}
+	
+	input[type="checkbox"]:checked+span:after {
+		border-color: #fff;
+		-webkit-transform: rotate(45deg) scale(1);
+		transform: rotate(45deg) scale(1);
+	}
