@@ -24,7 +24,6 @@ Vue.component(Field.name, Field);
 Vue.component(Picker.name, Picker);
 Vue.component(Spinner.name, Spinner);
 Vue.use(InfiniteScroll);
-Vue.use(VuePreview)
 
 Vue.use(VueLazyload, {
   loading: require('./assets/loading.gif')
