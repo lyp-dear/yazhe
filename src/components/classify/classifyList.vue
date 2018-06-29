@@ -20,7 +20,7 @@
 			<div class="foods-wrapper">
 				<scroll ref="scroll" class="wrapper" :data="list" :pullup="true" @scrollToEnd="loadJacketBottom">
 					<div class="content">
-						<div class="tab-container" v-for="(item,index) in classfyList" :key="index" v-show="index == selected">
+						<div class="tab-container" v-for="(item,index) in classfyList" :key="index" v-show="index == activeIndex">
 							<list :data="list" @nextRouter="goDetail"></list>
 							<div class="no-data" v-if="isData">别再拉了，我是有底线的</div>
 						</div>
