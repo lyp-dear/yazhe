@@ -115,7 +115,6 @@
 						// 滚动到底部
 						if(this.scroll.y <= (this.scroll.maxScrollY + 80)) {
 							this.$emit('scrollToEnd')
-							console.log(this.scroll)  
 						}
 					})
 				}

@@ -90,7 +90,6 @@
 				})
 			},
 			bannerDetail(item) {
-				console.log(item)
 				this.$router.push({
 					name: `detail`,
 					query: {
@@ -105,6 +104,7 @@
 				}
 				this.currentPage++;
 				GoodsList(this.currentPage).then((res) => {
+					console.log(res)
 					if(res.data.code === ERR_CODE) {
 						if(res.data.data === null) {
 							this.isData = true;

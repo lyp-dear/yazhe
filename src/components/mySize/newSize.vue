@@ -180,7 +180,6 @@
 		},
 		watch: {
 			data(val) {
-				console.log(val);
 				this.sizeList = val;
 				for(let i = 0; i < val.length; i++) {
 					let obj = {

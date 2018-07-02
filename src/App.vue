@@ -41,8 +41,8 @@
 				selected: '',
 
 				//openId: 'oKDYO1VIDO55MUMGVJyvu1DE9_fA',
-				// openId: 'oKDYO1Ut6llB3R9qd4MHyy9F5Ous',
-				openId: '',
+				openId: 'oKDYO1TP55fS1b8Us8jBDTOvJaFo',
+				// openId: '',
 			}
 		},
 		methods: {
@@ -64,7 +64,6 @@
 			},
 			getUserInfo() {
 				GetUserInfo(this.openId).then((res) => {
-					console.log(res)
 					if(res.data.code === ERR_CODE) {
 						let data = res.data.data;
 						data = JSON.stringify(data);
@@ -74,14 +73,14 @@
 			}
 		},
 		mounted() {
-			this.openId = getQueryString('openId');
-			if(this.openId == null) {
-				this.openId = GetQueryString('openId');
-				if(this.openId == null) {
-					window.location.href = 'http://www.argesz.com/yazhe/common/author?type=1';
-				}
-				return;
-			}
+			// this.openId = getQueryString('openId');
+			// if(this.openId == null) {
+			// 	this.openId = GetQueryString('openId');
+			// 	if(this.openId == null) {
+			// 		window.location.href = 'http://www.argesz.com/yazhe/common/author?type=1';
+			// 	}
+			// 	return;
+			// }
 			this.getUserInfo();
 			this.selected = 'index';
 			//this.wxconfigInit();

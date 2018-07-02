@@ -110,7 +110,8 @@
 				goodsList: [],
 				trueNum: 0,
 				isAndroid: false,
-				isiOS: false
+				isiOS: false,
+				isSwitch: false,
 			}
 		},
 		methods: {
@@ -134,6 +135,8 @@
 				})
 			},
 			selected(item) {
+				if(this.isSwitch) return;
+				this.isSwitch = true;
 				if(item.isChecked) {
 					item.isChecked = false;
 					this.trueNum--;
@@ -146,6 +149,7 @@
 						}
 					}
 					this.isCheckde = false;
+					this.isSwitch = false;
 				} else {
 					item.isChecked = true;
 						this.trueNum = 0;
@@ -159,7 +163,6 @@
 							this.trueNum++;
 						}
 					}
-					console.log(this.trueNum)
 					if(this.trueNum === this.carList.length) {
 						
 						this.isCheckde = true;
@@ -171,8 +174,9 @@
 						goods_id: item.goods_id,
 					}
 					this.goodsList.push(obj);
+					this.isSwitch = false;
+
 				}
-				return;
 			},
 			all(e) {
 				if(this.isCheckde) {
