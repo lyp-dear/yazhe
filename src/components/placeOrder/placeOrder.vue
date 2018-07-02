@@ -1,7 +1,7 @@
 <template>
 	<transition name="slide">
 		<div id="placeOrder">
-			<div class="address" v-for="(item,index) in addressList" @click="goAddress" v-if="item.type === 1">
+			<div class="address" :key="index" v-for="(item,index) in addressList" @click="goAddress" v-if="item.type === 1">
 				<div class="name-phone">
 					<div>
 						<span>收件人:{{item.name}}</span>
@@ -13,7 +13,7 @@
 					地址: {{item.province}}{{item.city}}{{item.area}}{{item.address}}
 				</div>
 			</div>
-			<div class="commodity-info" v-for="(item,index) in goods.list">
+			<div class="commodity-info" v-for="(item,index) in goods.list" :key="index">
 				<div class="icon"><img :src="item.picture_url" alt="" /></div>
 				<div class="name">
 					<p>{{item.goods_name}}</p>

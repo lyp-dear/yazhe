@@ -32,7 +32,7 @@
 				</mt-tab-container-item>
 				<mt-tab-container-item id="2">
 					<ul class="list bot">
-						<li v-for="(item,index) in botArray" @click="show(index)" :class="{'active': oIndex == index}">
+						<li v-for="(item,index) in botArray" @click="show(index)" :class="{'active': oIndex == index}" :key="index">
 							<span>Q{{index+1}}</span>{{item.nickName}}
 							<div class="bot-content" v-show="oIndex == index">
 								<ul>

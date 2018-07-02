@@ -18,8 +18,7 @@ const MyUpper = resolve => require(['components/myUpper/myUpper.vue'], resolve);
 export default new Router({
 	routes: [{
 		path: '/',
-		name: 'index',
-		component: Index
+		redirect: '/index'
 	}, {
 		path: '/index',
 		component: Index

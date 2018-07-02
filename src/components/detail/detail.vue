@@ -56,7 +56,7 @@
 					<div class="color-content">
 						<div class="color-title">颜色分类</div>
 						<div class="color-info">
-							<div :class="{'active': index === cIndex}" v-for="(item,index) in detail.goodsAndAttribute" @click="optionsSize(item,index)">{{item.value}} + {{item.price}}</div>
+							<div :class="{'active': index === cIndex}" v-for="(item,index) in detail.goodsAndAttribute" @click="optionsSize(item,index)" :key="index">{{item.value}} + {{item.price}}</div>
 						</div>
 					</div>
 				</div>
@@ -519,7 +519,6 @@
 		border-bottom: 1px solid #e1e1e1;
 	}
 	
-	.color-info {}
 	
 	.color-info>div {
 		padding: 8px 8px;

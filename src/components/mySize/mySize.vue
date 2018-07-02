@@ -4,7 +4,7 @@
 		<div id="my-size">
 			<no-size v-if="noSize"></no-size>
 			<div class="size-list">
-				<div class="size-list-info" v-for="(item,index) in sizeList">
+				<div class="size-list-info" v-for="(item,index) in sizeList" :key="index">
 					<div class="name-edit">
 						<div class="name">
 							<span>{{item.title}}</span>
@@ -18,7 +18,7 @@
 						</div>
 					</div>
 					<div class="user-item">
-						<div v-for="(info,key) in JSON.parse(item.body)">{{key}}:{{info}}</div>
+						<div v-for="(info,key) in JSON.parse(item.body)" :key="key">{{key}}:{{info}}</div>
 					</div>
 				</div>
 			</div>

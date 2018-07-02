@@ -3,7 +3,7 @@
 		<div id="my-address">
 			<no-address v-if="noAddress"></no-address>
 			<div class="size-list">
-				<div class="size-list-info" v-for="(item,index) in addressList">
+				<div class="size-list-info" v-for="(item,index) in addressList" :key="index">
 					<div class="name-edit">
 						<div class="name">
 							<span>{{item.name}}</span>
