@@ -26,7 +26,8 @@ Vue.component(Spinner.name, Spinner);
 Vue.use(InfiniteScroll);
 
 Vue.use(VueLazyload, {
-  loading: require('./assets/loading.gif')
+  loading: require('./assets/loading.gif'),
+  preLoad: 1.9
 })
 FastClick.attach(document.body)
 
