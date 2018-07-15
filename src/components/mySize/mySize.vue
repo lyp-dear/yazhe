@@ -80,6 +80,7 @@
 					if(res.data.code === ERR_CODE) {
 						this.popupVisible = true;
 						this.defalutList = res.data.data;
+						
 					}
 				})
 			},

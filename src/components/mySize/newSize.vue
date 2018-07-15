@@ -90,9 +90,7 @@
 
 			},
 			setData() {
-				this.$nextTick(_ => {
-					console.log(this.size)
-				})
+
 			},
 			cancle() {
 
@@ -180,6 +178,7 @@
 		},
 		watch: {
 			data(val) {
+				if(!val)return;
 				this.sizeList = val;
 				for(let i = 0; i < val.length; i++) {
 					let obj = {
@@ -208,6 +207,7 @@
 			},
 			size(val) {
 				this.dataSize = val;
+				console.log(this.dataSize)
 				if(!this.sizeData.body)return;
 				this.$nextTick(_ => {
 					let data = JSON.parse(this.sizeData.body);
