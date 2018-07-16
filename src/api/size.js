@@ -15,7 +15,11 @@ export function MySize(openId) {
 
 export function SizeConfig() {
 	const url = host + '/user/sizeConfig';
-	return axios.post(url).then((res) => {
+	let options = {
+		currentPage:0,
+		pageSize: 1000
+	}
+	return axios.post(url,options).then((res) => {
 		return Promise.resolve(res)
 	}).catch((res) => {　
 
